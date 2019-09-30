@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import MVermaResLaos as M
 
 M.Hello()
-M.yesnoloop('Have you created a folder \'Output\\Laos\' in the current directory? (y/n) ')
+M.yesnoloop('Have you created a folder \'Output\\Laos\\\'? (y/n) ')
 
 try:
     init = int(input('\nGive the index from where to start extraction\n(Leave blank for default): '))
@@ -117,7 +117,7 @@ for i in range(init,len(all_options)): #,len(all_options)):
     ministry_df[3] = total_hs  
     
     print('\nSaving the Output File')
-    path=r'./Output/Laos/Lao_MeasureType_'+str(i)+'.xlsx' 
+    path=r'../Output/Laos/Lao_MeasureType_'+str(i)+'.xlsx' 
     writer = pd.ExcelWriter(path, engine='openpyxl') 
     try:
         writer.book = load_workbook(path)

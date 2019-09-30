@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import MVermaResLaos as M
 
 M.Hello()
-M.yesnoloop('Have you created a folder \'Output\\Laos\' in the current directory? (y/n) ')
+M.yesnoloop('Have you created a folder \'Output\\Laos\\\'? (y/n) ')
 
 service = webdriver.chrome.service.Service(r'C:/Program Files (x86)/SeleniumWrapper/chromedriver.exe')
 service.start()
@@ -77,7 +77,7 @@ for i in range(1,pages+1): #(1,pages+1):
         
     print('\nSaving the Output File')
     final_df = pd.concat([M.blanks(1), pd.Series([str(total_num[0])+' total Sub-Ministries']), M.blanks(1),frame], ignore_index=True)
-    final_df.to_excel('./Output/Laos/Laos_Standards.xlsx', sheet_name='Main', header=False,index=False)
+    final_df.to_excel('../Output/Laos/Laos_Standards.xlsx', sheet_name='Main', header=False,index=False)
 
 driver.quit()
 
@@ -85,7 +85,7 @@ print('\nChecking File for HS Codes')
     
 all_ids=[]
 
-path=r'./Output/Laos/Laos_Standards.xlsx'
+path=r'../Output/Laos/Laos_Standards.xlsx'
 writer = pd.ExcelWriter(path, engine='openpyxl')    
 workbook=load_workbook(path)
 sheet = workbook['Main']

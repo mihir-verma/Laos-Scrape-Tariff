@@ -25,7 +25,7 @@ for i in range(init,15):
     print('\nOpening File of Measure_Type', i, 'for processing')
     all_ids=[]
     
-    path=r'./Output/Laos/Lao_MeasureType_'+str(i)+'.xlsx'
+    path=r'../Output/Laos/Lao_MeasureType_'+str(i)+'.xlsx'
     writer = pd.ExcelWriter(path, engine='openpyxl')
     
     workbook=load_workbook(path)
